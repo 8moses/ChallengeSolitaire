@@ -13,15 +13,22 @@ font = pygame.font.Font(None, 50)
 achtergrond = pygame.image.load('backgroundimagegrid.jpg')
 Text = font.render('Stage', True, 'White')
 
-#stapel met kaarten
-transparantkaart1 = pygame.image.load('transparantcard.jpg')
-transparantkaart1 = pygame.transform.scale('transparantcard.jpg', (100, 200))
+# 4 Transparante kaarten + Die blauwe kaart stapel rechts
+transparantkaart = pygame.image.load('transparantcard.png')
+transparantkaart = pygame.transform.scale(transparantkaart,(130, 200))
+
+transparantkaart2 = pygame.image.load('transparantcard.png')
+transparantkaart2 = pygame.transform.scale(transparantkaart2,(130, 200))
+
+transparantkaart3 = pygame.image.load('transparantcard.png')
+transparantkaart3 = pygame.transform.scale(transparantkaart2,(130, 200))
+
+transparantkaart4 = pygame.image.load('transparantcard.png')
+transparantkaart4 = pygame.transform.scale(transparantkaart2,(130, 200))
 
 blauwkaart = pygame.image.load('blauwkaart.jpg')
-blauwkaart = pygame.transform.scale(blauwkaart, (100, 200))
+blauwkaart = pygame.transform.scale(blauwkaart, (130, 200))
 
-width = blauwkaart.get_rect().width
-height = blauwkaart.get_rect().height
 
 while True:
     for event in pygame.event.get():
@@ -29,10 +36,13 @@ while True:
             pygame.quit()
             exit()
     
-    blauwkaart = pygame.transform.scale(blauwkaart, (100, 200))
-    screen.blit(achtergrond, (0, 0))    
-    screen.blit(blauwkaart, (800, 50))
-    screen.blit(Text,(50, 20))
+    screen.blit(achtergrond, (0, 0))
+    screen.blit(transparantkaart, (20, 60))  
+    screen.blit(transparantkaart2, (200, 60)) 
+    screen.blit(transparantkaart3, (380, 60)) 
+    screen.blit(transparantkaart4, (560, 60)) 
+    screen.blit(blauwkaart, (860, 60))
+    screen.blit(Text,(50, 15))
 
     pygame.display.update()   
 
